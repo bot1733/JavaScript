@@ -1,0 +1,54 @@
+//1
+def func(nums):
+    even = []
+    odd = []
+    
+    for n in nums:
+        if n % 2 == 0:
+            even.append(n)
+        else:
+            odd.append(n)
+    
+    return even, odd
+
+
+print(func([1, 2, 3, 4, 5, 6]))
+//2
+def fact1(n):
+    res = 1
+    for i in range(1, n + 1):
+        res *= i
+    return res
+
+
+print(fact1(5))
+//3
+def check(s):
+    s = s.lower()
+    return s == s[::-1]
+
+
+print(check("level"))
+print(check("hello"))
+//4
+def gen(n):
+    for i in range(1, n + 1):
+        yield i * i
+
+
+for x in gen(5):
+    print(x)
+//5
+def most(lst):
+    d = {}
+    
+    for i in lst:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] = 1
+    
+    return max(d, key=d.get)
+
+
+print(most([1, 2, 2, 3, 3, 3, 4]))
